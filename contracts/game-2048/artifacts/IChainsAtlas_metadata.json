@@ -1,0 +1,116 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_contract",
+						"type": "address"
+					}
+				],
+				"name": "getRuntimeReturn",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "bytecode",
+						"type": "bytes"
+					}
+				],
+				"name": "runBytecode",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/game-2048/KaijuGameFactory.sol": "IChainsAtlas"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0x5bce51e11f7d194b79ea59fe00c9e8de9fa2c5530124960f29a24d4c740a3266",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7e66dfde185df46104c11bc89d08fa0760737aa59a2b8546a656473d810a8ea4",
+				"dweb:/ipfs/QmXvyqtXPaPss2PD7eqPoSao5Szm2n6UMoiG8TZZDjmChR"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f",
+				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
+			]
+		},
+		"contracts/game-2048/DateTime.sol": {
+			"keccak256": "0x4f66593c22429abb570972bb374dc1ad686429a4898295a7a08666ebee4212d4",
+			"license": "The MIT License (MIT)",
+			"urls": [
+				"bzz-raw://5140019dc4a142036bc7aab765531519ce4d22ad7277318545e17fbcebac3224",
+				"dweb:/ipfs/QmYyJfAp5qeEts7wAvwFs7NcbfEEbv5cfhBSZHjRqGiAkn"
+			]
+		},
+		"contracts/game-2048/KaijuGameFactory.sol": {
+			"keccak256": "0x44fa7d42a53cc631949efb89a384425351ae56c65ccd7de7af57992cbaa397a2",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://1b1de58993089940e7b9c0573690b0eb590c4c163a027b7d3c8355dd543909de",
+				"dweb:/ipfs/Qmdovnaqo5NmMPdvD4M81PEfHvTennd1TUu6mnTgFbJeh2"
+			]
+		},
+		"contracts/game-2048/interfaces/IKaiju2048GameNFT.sol": {
+			"keccak256": "0xb09821578cac64fb3dc3ca6da01adbe3b75074cefa8445d1ad755a91018d5b06",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://f0d8d202d91a9b85c7ceb4f58d2a24e7cbbd3deb76a4dd84869a189a7862155b",
+				"dweb:/ipfs/QmUTrex2dfhw5jQ2c8r3JDnkstFXMYXbTKHo7C9Qbi3ysv"
+			]
+		}
+	},
+	"version": 1
+}

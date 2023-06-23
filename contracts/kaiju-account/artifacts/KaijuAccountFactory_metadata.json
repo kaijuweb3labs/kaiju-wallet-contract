@@ -1,0 +1,478 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract SafeProxyFactory",
+						"name": "_proxyFactory",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_safeSingleton",
+						"type": "address"
+					},
+					{
+						"internalType": "contract EIP4337Manager",
+						"name": "_eip4337Manager",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "salt",
+						"type": "uint256"
+					}
+				],
+				"name": "createAccount",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "eip4337Manager",
+				"outputs": [
+					{
+						"internalType": "contract EIP4337Manager",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "salt",
+						"type": "uint256"
+					}
+				],
+				"name": "getAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "proxyFactory",
+				"outputs": [
+					{
+						"internalType": "contract SafeProxyFactory",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "safeSingleton",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getAddress(address,uint256)": {
+					"notice": "calculate the counterfactual address of this account as it would be returned by createAccount() (uses the same \"create2 signature\" used by SafeProxyFactory.createProxyWithNonce)"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/kaiju-account/KaijuAccountFactory.sol": "KaijuAccountFactory"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@account-abstraction/contracts/core/Helpers.sol": {
+			"keccak256": "0x591c87519f7155d1909210276b77925ab2722a99b7b5d5649aecc36ebbdb045a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://69643e83f68e6a13d5075c7565bfce326673b0bd98c432033c4603ea84835746",
+				"dweb:/ipfs/QmSwSzjYyV7qudi5vvsmzHMG2Z4YJZxX51RRXXVCLaNcEU"
+			]
+		},
+		"@account-abstraction/contracts/interfaces/IAccount.sol": {
+			"keccak256": "0x556a0e5980de18e90b115553ed502408155ba35f58642823010d9288047bc418",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a0f420134b79596db8737173c7b933ae0a33059e107b6327c43aa40d4744a9e4",
+				"dweb:/ipfs/QmRo8s1AhXmEMV7uPYnbpYwU19e9Bk6jmYBJTiPx3Fo85W"
+			]
+		},
+		"@account-abstraction/contracts/interfaces/IAggregator.sol": {
+			"keccak256": "0x060e9ddb0152250c269ba0640dc5753834ac44cf182a2837d508c0c529cae26a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://20ed837bc5909c89ff1910246bf245a5dad6840aa939382e1694964eb7dbd37b",
+				"dweb:/ipfs/QmTMybRq5yyghPDDs1ZCNAVB9sSJ4WHe6Q9mejuKPTAdNP"
+			]
+		},
+		"@account-abstraction/contracts/interfaces/IEntryPoint.sol": {
+			"keccak256": "0x3a90bf308819ed125fa4202f880999caff8a8686633b8ddb79a30ca240d5b8f8",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d2d21cc92c2fdab2b58d21bc25d4cd0e8c284b922528a186b087b818d54bc6cf",
+				"dweb:/ipfs/QmT1qrfuBjsv2rmRCDn8mgPXHp94hARJwzbcDuBLDTbFWd"
+			]
+		},
+		"@account-abstraction/contracts/interfaces/INonceManager.sol": {
+			"keccak256": "0x509871e6c63663cdcc3eba19920fe84e991f38b289b1377ac3c3a6d9f22d7e12",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://00fe21b4349b24c50df60e1a705179293982bd9e7a32b78d4bac9620f89e7fe2",
+				"dweb:/ipfs/QmSFFYGfUwQbVa6hASjU7YxTvgi2HkfrPr4X5oPHscHg8b"
+			]
+		},
+		"@account-abstraction/contracts/interfaces/IStakeManager.sol": {
+			"keccak256": "0xd227b02888cd4ac68daebcdfd992ec00f9fff66fa3b3bb16f656cd582fa3480f",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://b389da4714a138be63704a576a482505eab2855e263b38a93706395d8d42e7c3",
+				"dweb:/ipfs/QmeeAZpdHwUXxqP8pxA7GNtoCGBmmH4FaqLLwScVKGxtxZ"
+			]
+		},
+		"@account-abstraction/contracts/interfaces/UserOperation.sol": {
+			"keccak256": "0x61374003361059087fdcf17967a7bba052badeaf5c7f0ae689166f8aafd3a45c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://6ff83c59432e733bf6304dda27cd4b0f34401917dd535e2669cc842d2d26568c",
+				"dweb:/ipfs/QmPJbHU5TAjHqUTZzAcicEeG2nknmwCN43L4EW9LHbknTN"
+			]
+		},
+		"@account-abstraction/contracts/utils/Exec.sol": {
+			"keccak256": "0x5b232117afbc2939f3ffc92745614867e9e1d475a3e1e5443adae13c200174f1",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://62e7365379a06ead7b47637945bcaee095d51aab1d3ac00ddec69443e6cbe9fe",
+				"dweb:/ipfs/QmctG3aw4U3KMSMeJKoLJ1NJewjMWfppnd1m3kxNTe39Uy"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/Safe.sol": {
+			"keccak256": "0xfe09ad8ce3359ee997c4127c14264a94ec6f25dea38dc37997bd705e9aed9fcd",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://434e77c4ace5cefcf5a21af7eceb5b60ca45b55818e1ecf938d196345731c5e9",
+				"dweb:/ipfs/QmbYFyE4okvruZZuCxeNy86Hm6W7yPR4yJWkVztbPRTosu"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/base/Executor.sol": {
+			"keccak256": "0xf0be832e7529e92000544170a5529d73666a9b5e836b30c6f2ed6ef7d7d8c94a",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://710022b40c9f78a5b55b97f6ce600e4834df2ddd36bf714974d953883c82d58c",
+				"dweb:/ipfs/QmbdJNKH5opevm7HxQKQAe6W7dQTgSHKa4nKvbUNGRcQQp"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/base/FallbackManager.sol": {
+			"keccak256": "0x646b3088f15af8b4f71ac5eeffaa24ce0c1abed5f494f90368208b09e35d5165",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://7975be46d228510c70659b18076aecb3b0e7331b4d3a162444304145143bdc6e",
+				"dweb:/ipfs/QmRRbZrWUnoky6pVo8zMUzCTsshR4sZ2FjR13s8vyAb8dV"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/base/GuardManager.sol": {
+			"keccak256": "0xedfc7c830ab35e52d1208986b253f3422c2f0ca68054c10819fb348fcc6ccf5d",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://3ff8a4194d1160d2e23142937bc9d7eac7b6b553b1ee226390a0df07ebac1b64",
+				"dweb:/ipfs/QmSw8Y7z4TQrUTEosdWqcug7TUv9Tg1kxqMKHd7RuTnyzx"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/base/ModuleManager.sol": {
+			"keccak256": "0xd71b0d56dce386fa6f67c51061face071b2c7b03ec535d68717e2538ec47113a",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://30812896d9f57cae84a432c67fbb3007d566071ec203b2992f1c0f762722df0d",
+				"dweb:/ipfs/QmRyJ3JbsUwDQxQDTrqDDX4qNtVu7XiW8cD8WP5kgNJGGz"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/base/OwnerManager.sol": {
+			"keccak256": "0xec9799093eb7a73461cd5e563198751ee222f956f754ea622a03fe953e515b2c",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://5729c58b14e7b656c71dd3377e9519c0d34ef8c04851a9a21c3d62393e4fae7a",
+				"dweb:/ipfs/QmRRtfFpNqvdANny9TYBr8rA3HbT1egUCpb2uXALMHkVxK"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/common/Enum.sol": {
+			"keccak256": "0x4ff3008926a118e9f36e6747facc39dd13168e0d00f516888ae966ec20766453",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://385929800d1c0f92eb165fcf37a9e28b395b17d8b74f74755654d3a096a0fc34",
+				"dweb:/ipfs/QmagieLuN2jrp2oJHFyZuyz65Sh1CcupnXSEKypGFS5Gvo"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/common/NativeCurrencyPaymentFallback.sol": {
+			"keccak256": "0x3ddcd4130c67326033dcf773d2d87d7147e3a8386993ea3ab3f1c38da406adba",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://740a729397b6a0d903f4738a50e856d4e5039555024937b148d97529525dbfa9",
+				"dweb:/ipfs/QmQJuNVvHbkeJ6jjd75D8FsZBPXH6neoGBZdQgtsA82E7g"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/common/SecuredTokenTransfer.sol": {
+			"keccak256": "0x1eb8c3601538b73dd6a823ac4fca49bb8adc97d1302a936622156636c971eb05",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://c26495b1fe9229ea17f90b70f295030880d629b9ea3016ea20b634983865f7b3",
+				"dweb:/ipfs/QmTc1UmKcynkKn8DeviLMuy6scxNvAVSdLoX4ndUtdEL9N"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/common/SelfAuthorized.sol": {
+			"keccak256": "0xfb0e176bb208e047a234fe757e2acd13787e27879570b8544547ac787feb5f13",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://8e9a317f0c3c02ab1d6c38039bff2b3e0c97f4dc9d229d3d9149c1af1c5023b3",
+				"dweb:/ipfs/QmNcZjNChsuXF34T6f3Zu7i3tnqvKN4NyWBWZ4tXLH9kMu"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/common/SignatureDecoder.sol": {
+			"keccak256": "0x2a3baf0efa1585ddf2276505c6d34fa16f01cafff1288e40110d5e67fb459c7c",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://00cdded3068b9051ee0a966f40926fbc57dbe7ef8bf4285db3740f9d50468c80",
+				"dweb:/ipfs/QmcP5hKmaRqBe7TpgoXtncZqsNKKdCCKxZgXoxEL4Nj5F4"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/common/Singleton.sol": {
+			"keccak256": "0xcab7c6e5fb6d7295a9343f72fec26a2f632ddfe220a6f267b5c5a1eb2f9bce50",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://dd1c31d5787ef590a60f6b0dbc74d09e6fe4d3ad2f0529940d662bf315521cde",
+				"dweb:/ipfs/QmSAS5DYrGksJe4cPQ4wLrveXa1CjxAuEiohcLpPG5h2bo"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/common/StorageAccessible.sol": {
+			"keccak256": "0x2c5412a8f014db332322a6b24ee3cedce15dca17a721ae49fdef368568d4391e",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://e775f267d3e60ebe452d9533f46a0eb1f1dc4593d1bcb553e86cea205a5f361e",
+				"dweb:/ipfs/QmQdYDHGQsiMx1AADWRhX7tduU9ycTzrT5q3zBWvphXzKZ"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/external/SafeMath.sol": {
+			"keccak256": "0x5f856674d9be11344c5899deb43364e19baa75bc881cada4c159938270b2bd89",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://351c66e5fe92c0a51f79d133521545dabdd3f756312a7b1428c1fc813c512a1c",
+				"dweb:/ipfs/QmdnrRmgef8SdamEU6fVEqFD5RQwXeDFTfQuZEfX2vxC4x"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/handler/TokenCallbackHandler.sol": {
+			"keccak256": "0xc8fb9e60f5e561c7e4992a396e928344c278c2fbec8af65aebec44281542e7cb",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://e197c9a628bdce9a1df8da8ba07733ce0e8b5496a28a22a370dec979104c79da",
+				"dweb:/ipfs/QmUx8YhmT22YZYEXp2bVNR91hSb9w5qjAkzGiFy6DRNpdu"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/interfaces/ERC1155TokenReceiver.sol": {
+			"keccak256": "0x87e62665c041cade64e753ecdccf931cb100ab6e4bcc98769c1e6474be9db493",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://59ca1157dcfe19c72b9d1244a6ae5ec70fee9793d4d8af523b70f22ae567d55c",
+				"dweb:/ipfs/QmfE3kv73QuQWAWQND927LWVHVLCp19m1mLUvxVYJDEFZM"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/interfaces/ERC721TokenReceiver.sol": {
+			"keccak256": "0x96c4c5457fede2d4c6012011dfda36f8e8ffdb7388468f2dddb35661538bf479",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://99a54737bc23722f79ec9cf9de63ba35b556a61df453eb332f3cac783503f26c",
+				"dweb:/ipfs/QmbLW5C2RhoLbwDWEPtTKpyYE5apT9B3q4U11PZG3wSM1n"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/interfaces/ERC777TokensRecipient.sol": {
+			"keccak256": "0x32ca7f1610659f35e52f5a989e1d844b7847ad57fab06e0cae5bc027248536ac",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://9082896ec697e320087b1a682b69a5cdf71b33a2f7a956e2fb6054f9f9d56d06",
+				"dweb:/ipfs/QmUu7iNkQNvvqBPbbxuhqiQpYPYYnfsyPEsf4AMQFANXFZ"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/interfaces/IERC165.sol": {
+			"keccak256": "0x779ed3893a8812e383670b755f65c7727e9343dadaa4d7a4aa7f4aa35d859fdb",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://bb2039e1459ace1e68761e873632fc339866332f9f5ecb7452a0bc3a3b847e89",
+				"dweb:/ipfs/QmYXvDQXJnDkXFvsvKLyZXaAv4x42qvtbtmwHftP4RKX38"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/interfaces/ISignatureValidator.sol": {
+			"keccak256": "0x2459cb3ed73ecb80e1e7a6508d09a58cc59570b049f77042f669dedfcc5f6457",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://3c4a1371948b11f78171bc4ae4fd169a1eec11e5c4b273eb2c54bc030a1aae25",
+				"dweb:/ipfs/QmPuztatXZYVS65n8YbCyccJFZYPP6zQfBQ8tTY27pB978"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/libraries/SafeStorage.sol": {
+			"keccak256": "0xae0c704f3e4ec6b1436bbbd10b153feaa665ac36e556ccc4f2155e4c02f5c46a",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://f2c67b22791022356f5ca85533ecdda740aa8d5c9ed263d0c2761f2560dd1b87",
+				"dweb:/ipfs/QmYf6gm89StvSTgZGR83UgSmUgJGjhGbBRRNvmxwywfiMc"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/proxies/IProxyCreationCallback.sol": {
+			"keccak256": "0xf5410c842c1bbff96a2047b31f5437a9dc5183d004ab1fc9f952220f11379602",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://0ac1fa0c7d6fc683384a3ce0b328c66adcc53b6a3e59d3b67c62404dd57c3099",
+				"dweb:/ipfs/QmcVvxtcjZqyQwQcU4cPU4SZZ2LEahsmVWgJWGh5n8EHa7"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/proxies/SafeProxy.sol": {
+			"keccak256": "0x5dccbe86285c1d4c4b2fed0ae8007620c3186d22411f43feecfbf8a028e5c7e2",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://a1a02d01a92895110505e141d05b0924ea457a25b89a161f0aeedf6b5cb41aec",
+				"dweb:/ipfs/QmYWEsFbWwtrVvEF9MNQtf4X3Qt13dAE8o44tEyAS9jmKP"
+			]
+		},
+		"@gnosis.pm/safe-contracts/contracts/proxies/SafeProxyFactory.sol": {
+			"keccak256": "0xdc68ce6d07d02723fcdde9f115c976d78bc599667b4f9d08e6cda50f51949533",
+			"license": "LGPL-3.0-only",
+			"urls": [
+				"bzz-raw://0389c45311e383f0a27a928594341da67f061bf88795aafdbfb5e8449416fc26",
+				"dweb:/ipfs/QmZXmXReN6uro3RAbh661G6LqfMEMeaLKRVoeJr5nx1tnh"
+			]
+		},
+		"@openzeppelin/contracts/interfaces/IERC1271.sol": {
+			"keccak256": "0x0705a4b1b86d7b0bd8432118f226ba139c44b9dcaba0a6eafba2dd7d0639c544",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c45b821ef9e882e57c256697a152e108f0f2ad6997609af8904cae99c9bd422e",
+				"dweb:/ipfs/QmRKCJW6jjzR5UYZcLpGnhEJ75UVbH6EHkEa49sWx2SKng"
+			]
+		},
+		"@openzeppelin/contracts/utils/Create2.sol": {
+			"keccak256": "0x6e00f269073ffc4350e56b7e8153c9092d5f70bfba423299990514183101ef89",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8dc5ff5c204604be7594ce2fa9100a0638f22b5aada6ebec1e165b0f50a48447",
+				"dweb:/ipfs/QmfH7uWphPrq8jqwGvyh4pFnLEgEPmLwyGV2Bvx1Acjggh"
+			]
+		},
+		"@openzeppelin/contracts/utils/Strings.sol": {
+			"keccak256": "0x3088eb2868e8d13d89d16670b5f8612c4ab9ff8956272837d8e90106c59c14a0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b81d9ff6559ea5c47fc573e17ece6d9ba5d6839e213e6ebc3b4c5c8fe4199d7f",
+				"dweb:/ipfs/QmPCW1bFisUzJkyjroY3yipwfism9RRCigCcK1hbXtVM8n"
+			]
+		},
+		"@openzeppelin/contracts/utils/cryptography/ECDSA.sol": {
+			"keccak256": "0x809bc3edb4bcbef8263fa616c1b60ee0004b50a8a1bfa164d8f57fd31f520c58",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8b93a1e39a4a19eba1600b92c96f435442db88cac91e315c8291547a2a7bcfe2",
+				"dweb:/ipfs/QmTm34KVe6uZBZwq8dZDNWwPcm24qBJdxqL3rPxBJ4LrMv"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/Math.sol": {
+			"keccak256": "0xe4455ac1eb7fc497bb7402579e7b4d64d928b846fce7d2b6fde06d366f21c2b3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cc8841b3cd48ad125e2f46323c8bad3aa0e88e399ec62acb9e57efa7e7c8058c",
+				"dweb:/ipfs/QmSqE4mXHA2BXW58deDbXE8MTcsL5JSKNDbm23sVQxRLPS"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/SignedMath.sol": {
+			"keccak256": "0xf92515413956f529d95977adc9b0567d583c6203fc31ab1c23824c35187e3ddc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c50fcc459e49a9858b6d8ad5f911295cb7c9ab57567845a250bf0153f84a95c7",
+				"dweb:/ipfs/QmcEW85JRzvDkQggxiBBLVAasXWdkhEysqypj9EaB6H2g6"
+			]
+		},
+		"contracts/kaiju-account/EIP4337Fallback.sol": {
+			"keccak256": "0x31986ed4bfa004ee852881b9ba5dfe5ca9dce613bd9b29b3c1d31646d0b43f7a",
+			"license": "GPL",
+			"urls": [
+				"bzz-raw://e150b9e3d196474b72ef171fdec96a2190e65ef627d79ed2dcb203e1d99e9af8",
+				"dweb:/ipfs/QmQcvZYbCpggP7m5LL4FS5WBLtbUXvtFwfPu43MdfjBGfc"
+			]
+		},
+		"contracts/kaiju-account/EIP4337Manager.sol": {
+			"keccak256": "0x831410f2da661c4309fe8601502a5928b0b872b8c3530d9023f0801c7fef552b",
+			"license": "GPL",
+			"urls": [
+				"bzz-raw://80fe5b480d5cb4dd6901bdf40d28cf08802377fcf429963db09c59771ea6644a",
+				"dweb:/ipfs/QmQhRuuw8Zab9mpHk8SNB3oKuzW9To5pxRKr6yot68Kxt2"
+			]
+		},
+		"contracts/kaiju-account/KaijuAccountFactory.sol": {
+			"keccak256": "0xebab2d181be9c221f473f54cc659a77e304cdea40bfdab13da3710493d4356cb",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://9bd6612f665316738984fc18ffe82f72c6adce270ed741fac5bd18341622a298",
+				"dweb:/ipfs/QmRJRg41gNT2CETtSYupr6tUQbW7imynEoZso2TTkBE71r"
+			]
+		}
+	},
+	"version": 1
+}

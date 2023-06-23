@@ -1,0 +1,520 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_dateTimeContract",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_byteCodeExecutorAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_gameNFTContract",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "_gameId",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_randomNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "GetRandomNumber",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "_gameId",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isValid",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_FEScore",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_contractScore",
+						"type": "uint256"
+					}
+				],
+				"name": "Verify2048Game",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "SINGAPORE_TIME_DIFF",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "player",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "gameId",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "score",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct KaijuGameFactory.gameObject",
+						"name": "game",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currentTimestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "addToLeaderBoard",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "gameIdToRandom",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDailyWinner",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "player",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "gameId",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "score",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct KaijuGameFactory.gameObject",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLeaderBoard",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "player",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "gameId",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "score",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct KaijuGameFactory.gameObject[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "year",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint8",
+						"name": "month",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "day",
+						"type": "uint8"
+					}
+				],
+				"name": "getLeaderBoardByDate",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "player",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "gameId",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "score",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct KaijuGameFactory.gameObject[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					}
+				],
+				"name": "getPersonalBest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "gameId",
+						"type": "string"
+					}
+				],
+				"name": "getRandomNumber",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "getYearMonthDate",
+				"outputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "leaderBoardByDate",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "playerPersonalBest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_byteCodeExecutorAddress",
+						"type": "address"
+					}
+				],
+				"name": "setGameContractAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_gameId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_FEScore",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_gameData",
+						"type": "bytes"
+					},
+					{
+						"internalType": "string",
+						"name": "_cid",
+						"type": "string"
+					}
+				],
+				"name": "verify2048game",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/game-2048/KaijuGameFactory.sol": "KaijuGameFactory"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0x5bce51e11f7d194b79ea59fe00c9e8de9fa2c5530124960f29a24d4c740a3266",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7e66dfde185df46104c11bc89d08fa0760737aa59a2b8546a656473d810a8ea4",
+				"dweb:/ipfs/QmXvyqtXPaPss2PD7eqPoSao5Szm2n6UMoiG8TZZDjmChR"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f",
+				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
+			]
+		},
+		"contracts/game-2048/DateTime.sol": {
+			"keccak256": "0x4f66593c22429abb570972bb374dc1ad686429a4898295a7a08666ebee4212d4",
+			"license": "The MIT License (MIT)",
+			"urls": [
+				"bzz-raw://5140019dc4a142036bc7aab765531519ce4d22ad7277318545e17fbcebac3224",
+				"dweb:/ipfs/QmYyJfAp5qeEts7wAvwFs7NcbfEEbv5cfhBSZHjRqGiAkn"
+			]
+		},
+		"contracts/game-2048/KaijuGameFactory.sol": {
+			"keccak256": "0xff9ca95d09e956f2dfdf5019f2fd3cd0e9f5bced2ef6049dd5e8555cdd03517c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://95397cb582a44eba756101757dff3b32c720c682bb6d9833d8d58b7f7e267d1e",
+				"dweb:/ipfs/Qmb7xRj1WiJ3zqSLWVvTzTATA2xRF8LpffD2USuT5hHJ6x"
+			]
+		},
+		"contracts/game-2048/interfaces/IChainsAtlas.sol": {
+			"keccak256": "0xcb3d6ab76d04cf13c015f7b19104e872645766144987035905e7cf363c98e891",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://76c92faa3beca7f5ca386f38787baa06a5b3971df273a2bf11bd00ec756eadd6",
+				"dweb:/ipfs/QmRBakvd2pmEgHjRZstQCUFc8TGpRC3uAKPTmkqkcVe9aR"
+			]
+		},
+		"contracts/game-2048/interfaces/IKaiju2048GameNFT.sol": {
+			"keccak256": "0xb09821578cac64fb3dc3ca6da01adbe3b75074cefa8445d1ad755a91018d5b06",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://f0d8d202d91a9b85c7ceb4f58d2a24e7cbbd3deb76a4dd84869a189a7862155b",
+				"dweb:/ipfs/QmUTrex2dfhw5jQ2c8r3JDnkstFXMYXbTKHo7C9Qbi3ysv"
+			]
+		}
+	},
+	"version": 1
+}
